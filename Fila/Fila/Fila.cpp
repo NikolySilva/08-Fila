@@ -114,7 +114,7 @@ void remove()
 		if (aux->prox == NULL)
 		{
 			paraExcluir = aux;
-	
+
 			inicio = NULL;
 			fim = NULL;
 			free(paraExcluir);
