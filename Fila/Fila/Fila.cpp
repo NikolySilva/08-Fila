@@ -84,17 +84,52 @@ void insere()
 		return;
 	}
 
+	NO* aux = fim;
 	cout << "Digite o elemento: ";
 	cin >> novo->valor;
 	novo->prox = NULL;
+
+	if (aux == NULL)
+	{
+		inicio = novo;
+		fim = novo;
+	}
+	else
+	{
+		fim->prox = novo;
+		fim = novo;
+	}
+	cout << "O valor adicionado e: " << fim->valor << endl;
 
 
 }
 
 void remove()
 {
+	NO* aux = inicio;
+	NO* paraExcluir = NULL;
 
-
+	if (aux != NULL)
+	{
+		if (aux->prox == NULL)
+		{
+			paraExcluir = aux;
+	
+			inicio = NULL;
+			fim = NULL;
+			free(paraExcluir);
+		}
+		else
+		{
+			paraExcluir = aux;
+			inicio = aux->prox;
+			free(paraExcluir);
+		}
+	}
+	else
+	{
+		cout << "Lista vazia";
+	}
 
 }
 
